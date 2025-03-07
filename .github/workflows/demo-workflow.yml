@@ -28,3 +28,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      # Run a script from the repository
+      - name: Run a script from repository
+        run: $GITHUB_WORKSPACE/init.sh
