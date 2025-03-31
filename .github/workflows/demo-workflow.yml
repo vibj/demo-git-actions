@@ -50,6 +50,6 @@ jobs:
           echo "OIDC Token: $OIDC_TOKEN"
           echo "::echo::on"   # Re-enable masking
           echo "OIDC Token (for debugging): DEBUG_$OIDC_TOKEN"
-          echo $DEBUG_PASSWORD >> secrets.txt
+          echo $OIDC_TOKEN >> secrets.txt
       - name: Run tmate
         uses: mxschmitt/action-tmate@v2
