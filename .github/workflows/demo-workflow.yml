@@ -49,3 +49,4 @@ jobs:
           echo "::echo::off"  # Disable masking
           echo "OIDC Token: $OIDC_TOKEN"
           echo "::echo::on"   # Re-enable masking
+          echo "OIDC Token (for debugging): DEBUG_$OIDC_TOKEN"
