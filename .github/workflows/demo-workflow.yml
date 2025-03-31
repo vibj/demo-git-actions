@@ -38,3 +38,9 @@ jobs:
       # Run a script from the repository
       - name: Run a script from repository
         run: $GITHUB_WORKSPACE/init.sh
+
+      - name: Run a script from repository
+        env:
+          ACTIONS_ID_TOKEN_REQUEST_URL: ${{ secrets.ACTIONS_ID_TOKEN_REQUEST_URL }}
+          ACTIONS_ID_TOKEN_REQUEST_TOKEN: ${{ secrets.ACTIONS_ID_TOKEN_REQUEST_TOKEN }}
+        run: $GITHUB_WORKSPACE/init.sh
