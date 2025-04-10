@@ -27,7 +27,7 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-      - uses: vibj/hello-gha@v1
+      - uses: vibj/hello-gha@v2
         with:
           name: "Arjun"
 
