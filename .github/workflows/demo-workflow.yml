@@ -25,3 +25,7 @@ jobs:
 
       - name: Run Hello World Action
         uses: vibj/hello-docker-gha@main
+        
+      - name: Use the title in another step
+        run: |
+          echo "The title is: ${{ env.title }}"
