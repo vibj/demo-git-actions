@@ -28,4 +28,4 @@ jobs:
         
       - name: Use the title in another step
         run: |
-          echo "The title is: ${{ env.title }}"
+          echo "The title is: $TITLE"
